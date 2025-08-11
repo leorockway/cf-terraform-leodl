@@ -1,0 +1,2187 @@
+[11:58:40]:[~/coalfire4]% terraform plan
+module.vpc.module.vpc_endpoints.data.aws_region.current: Reading...
+module.vpc.data.aws_iam_policy_document.flow_log_cloudwatch_assume_role[0]: Reading...
+module.vpc.data.aws_iam_policy_document.vpc_flow_log_cloudwatch[0]: Reading...
+module.autoscaling.data.aws_partition.current: Reading...
+module.vpc.data.aws_region.current: Reading...
+module.vpc.module.vpc_endpoints.data.aws_region.current: Read complete after 0s [id=us-east-2]
+module.vpc.data.aws_region.current: Read complete after 0s [id=us-east-2]
+module.vpc.data.aws_iam_policy_document.flow_log_cloudwatch_assume_role[0]: Read complete after 0s [id=1021377347]
+module.autoscaling.data.aws_partition.current: Read complete after 0s [id=aws]
+module.vpc.data.aws_iam_policy_document.vpc_flow_log_cloudwatch[0]: Read complete after 0s [id=2053943846]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # data.aws_instance.management will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_instance" "management" {
+      + ami                         = (known after apply)
+      + arn                         = (known after apply)
+      + associate_public_ip_address = (known after apply)
+      + availability_zone           = (known after apply)
+      + credit_specification        = (known after apply)
+      + disable_api_stop            = (known after apply)
+      + disable_api_termination     = (known after apply)
+      + ebs_block_device            = (known after apply)
+      + ebs_optimized               = (known after apply)
+      + enclave_options             = (known after apply)
+      + ephemeral_block_device      = (known after apply)
+      + host_id                     = (known after apply)
+      + host_resource_group_arn     = (known after apply)
+      + iam_instance_profile        = (known after apply)
+      + id                          = (known after apply)
+      + instance_id                 = (known after apply)
+      + instance_state              = (known after apply)
+      + instance_tags               = (known after apply)
+      + instance_type               = (known after apply)
+      + ipv6_addresses              = (known after apply)
+      + key_name                    = (known after apply)
+      + launch_time                 = (known after apply)
+      + maintenance_options         = (known after apply)
+      + metadata_options            = (known after apply)
+      + monitoring                  = (known after apply)
+      + network_interface_id        = (known after apply)
+      + outpost_arn                 = (known after apply)
+      + password_data               = (known after apply)
+      + placement_group             = (known after apply)
+      + placement_partition_number  = (known after apply)
+      + private_dns                 = (known after apply)
+      + private_dns_name_options    = (known after apply)
+      + private_ip                  = (known after apply)
+      + public_dns                  = (known after apply)
+      + public_ip                   = (known after apply)
+      + root_block_device           = (known after apply)
+      + secondary_private_ips       = (known after apply)
+      + security_groups             = (known after apply)
+      + source_dest_check           = (known after apply)
+      + subnet_id                   = (known after apply)
+      + tags                        = (known after apply)
+      + tenancy                     = (known after apply)
+      + user_data                   = (known after apply)
+      + user_data_base64            = (known after apply)
+      + vpc_security_group_ids      = (known after apply)
+    }
+
+  # aws_instance.management_host will be created
+  + resource "aws_instance" "management_host" {
+      + ami                                  = "ami-0c55b159cbfafe1f0"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = true
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "cf"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name"       = "management-host"
+          + "managed_by" = "terraform"
+          + "purpose"    = "management"
+        }
+      + tags_all                             = {
+          + "Name"       = "management-host"
+          + "managed_by" = "terraform"
+          + "purpose"    = "management"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # module.alb.aws_lb.this[0] will be created
+  + resource "aws_lb" "this" {
+      + arn                                                          = (known after apply)
+      + arn_suffix                                                   = (known after apply)
+      + client_keep_alive                                            = 3600
+      + desync_mitigation_mode                                       = "defensive"
+      + dns_name                                                     = (known after apply)
+      + drop_invalid_header_fields                                   = false
+      + enable_deletion_protection                                   = false
+      + enable_http2                                                 = true
+      + enable_tls_version_and_cipher_suite_headers                  = false
+      + enable_waf_fail_open                                         = false
+      + enable_xff_client_port                                       = true
+      + enable_zonal_shift                                           = false
+      + enforce_security_group_inbound_rules_on_private_link_traffic = (known after apply)
+      + id                                                           = (known after apply)
+      + idle_timeout                                                 = 60
+      + internal                                                     = false
+      + ip_address_type                                              = "ipv4"
+      + load_balancer_type                                           = "application"
+      + name                                                         = "application-alb"
+      + name_prefix                                                  = (known after apply)
+      + preserve_host_header                                         = false
+      + security_groups                                              = (known after apply)
+      + subnets                                                      = (known after apply)
+      + tags                                                         = {
+          + "Name" = "application-alb"
+        }
+      + tags_all                                                     = {
+          + "Name" = "application-alb"
+        }
+      + vpc_id                                                       = (known after apply)
+      + xff_header_processing_mode                                   = "append"
+      + zone_id                                                      = (known after apply)
+
+      + subnet_mapping (known after apply)
+
+      + timeouts {
+          + create = "10m"
+          + delete = "10m"
+          + update = "10m"
+        }
+    }
+
+  # module.alb.aws_lb_listener.frontend_http_tcp[0] will be created
+  + resource "aws_lb_listener" "frontend_http_tcp" {
+      + arn                                                                   = (known after apply)
+      + id                                                                    = (known after apply)
+      + load_balancer_arn                                                     = (known after apply)
+      + port                                                                  = 80
+      + protocol                                                              = "HTTP"
+      + routing_http_request_x_amzn_mtls_clientcert_header_name               = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_issuer_header_name        = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_leaf_header_name          = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_serial_number_header_name = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_subject_header_name       = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_validity_header_name      = (known after apply)
+      + routing_http_request_x_amzn_tls_cipher_suite_header_name              = (known after apply)
+      + routing_http_request_x_amzn_tls_version_header_name                   = (known after apply)
+      + routing_http_response_access_control_allow_credentials_header_value   = (known after apply)
+      + routing_http_response_access_control_allow_headers_header_value       = (known after apply)
+      + routing_http_response_access_control_allow_methods_header_value       = (known after apply)
+      + routing_http_response_access_control_allow_origin_header_value        = (known after apply)
+      + routing_http_response_access_control_expose_headers_header_value      = (known after apply)
+      + routing_http_response_access_control_max_age_header_value             = (known after apply)
+      + routing_http_response_content_security_policy_header_value            = (known after apply)
+      + routing_http_response_server_enabled                                  = (known after apply)
+      + routing_http_response_strict_transport_security_header_value          = (known after apply)
+      + routing_http_response_x_content_type_options_header_value             = (known after apply)
+      + routing_http_response_x_frame_options_header_value                    = (known after apply)
+      + ssl_policy                                                            = (known after apply)
+      + tags_all                                                              = (known after apply)
+      + tcp_idle_timeout_seconds                                              = (known after apply)
+
+      + default_action {
+          + order            = (known after apply)
+          + target_group_arn = (known after apply)
+          + type             = "forward"
+        }
+
+      + mutual_authentication (known after apply)
+    }
+
+  # module.alb.aws_lb_target_group.main[0] will be created
+  + resource "aws_lb_target_group" "main" {
+      + arn                                = (known after apply)
+      + arn_suffix                         = (known after apply)
+      + connection_termination             = (known after apply)
+      + deregistration_delay               = "300"
+      + id                                 = (known after apply)
+      + ip_address_type                    = (known after apply)
+      + lambda_multi_value_headers_enabled = false
+      + load_balancer_arns                 = (known after apply)
+      + load_balancing_algorithm_type      = (known after apply)
+      + load_balancing_anomaly_mitigation  = (known after apply)
+      + load_balancing_cross_zone_enabled  = (known after apply)
+      + name                               = (known after apply)
+      + name_prefix                        = "apptg-"
+      + port                               = 80
+      + preserve_client_ip                 = (known after apply)
+      + protocol                           = "HTTP"
+      + protocol_version                   = (known after apply)
+      + proxy_protocol_v2                  = false
+      + slow_start                         = 0
+      + tags                               = {
+          + "Name" = "apptg-"
+        }
+      + tags_all                           = {
+          + "Name" = "apptg-"
+        }
+      + target_type                        = "instance"
+      + vpc_id                             = (known after apply)
+
+      + health_check {
+          + enabled             = true
+          + healthy_threshold   = 3
+          + interval            = 30
+          + matcher             = (known after apply)
+          + path                = "/"
+          + port                = "traffic-port"
+          + protocol            = "HTTP"
+          + timeout             = (known after apply)
+          + unhealthy_threshold = 3
+        }
+
+      + stickiness (known after apply)
+
+      + target_failover (known after apply)
+
+      + target_group_health (known after apply)
+
+      + target_health_state (known after apply)
+    }
+
+  # module.alb.aws_security_group.this[0] will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "application-alb-"
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name" = "application-alb"
+        }
+      + tags_all               = {
+          + "Name" = "application-alb"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.alb_sg.aws_security_group.this will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Allows HTTP from the internet"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "alb-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.alb_sg.aws_vpc_security_group_egress_rule.this["allows all egress"] will be created
+  + resource "aws_vpc_security_group_egress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "Allow all outbound traffic"
+      + from_port              = 0
+      + id                     = (known after apply)
+      + ip_protocol            = "-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 0
+    }
+
+  # module.alb_sg.aws_vpc_security_group_ingress_rule.this["allows http"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "Allow HTTP from internet"
+      + from_port              = 80
+      + id                     = (known after apply)
+      + ip_protocol            = "tcp"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 80
+    }
+
+  # module.application_sg.aws_security_group.this will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Allows SSH from management and web traffic from ALB"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "application-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.application_sg.aws_vpc_security_group_egress_rule.this["allows all egress"] will be created
+  + resource "aws_vpc_security_group_egress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "Allow all outbound traffic"
+      + from_port              = 0
+      + id                     = (known after apply)
+      + ip_protocol            = "-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 0
+    }
+
+  # module.application_sg.aws_vpc_security_group_ingress_rule.this["allows http"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                          = (known after apply)
+      + description                  = "Allow web traffic from ALB"
+      + from_port                    = 80
+      + id                           = (known after apply)
+      + ip_protocol                  = "tcp"
+      + referenced_security_group_id = (known after apply)
+      + security_group_id            = (known after apply)
+      + security_group_rule_id       = (known after apply)
+      + tags_all                     = {}
+      + to_port                      = 80
+    }
+
+  # module.application_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                          = (known after apply)
+      + description                  = "Allow SSH from management"
+      + from_port                    = 22
+      + id                           = (known after apply)
+      + ip_protocol                  = "tcp"
+      + referenced_security_group_id = (known after apply)
+      + security_group_id            = (known after apply)
+      + security_group_rule_id       = (known after apply)
+      + tags_all                     = {}
+      + to_port                      = 22
+    }
+
+  # module.autoscaling.aws_autoscaling_group.this[0] will be created
+  + resource "aws_autoscaling_group" "this" {
+      + arn                              = (known after apply)
+      + availability_zones               = (known after apply)
+      + default_cooldown                 = (known after apply)
+      + desired_capacity                 = 2
+      + force_delete                     = false
+      + force_delete_warm_pool           = false
+      + health_check_grace_period        = 300
+      + health_check_type                = (known after apply)
+      + id                               = (known after apply)
+      + ignore_failed_scaling_activities = false
+      + load_balancers                   = (known after apply)
+      + max_size                         = 6
+      + metrics_granularity              = "1Minute"
+      + min_size                         = 2
+      + name                             = (known after apply)
+      + name_prefix                      = "application-asg-"
+      + predicted_capacity               = (known after apply)
+      + protect_from_scale_in            = false
+      + service_linked_role_arn          = (known after apply)
+      + target_group_arns                = (known after apply)
+      + termination_policies             = []
+      + vpc_zone_identifier              = (known after apply)
+      + wait_for_capacity_timeout        = "10m"
+      + warm_pool_size                   = (known after apply)
+
+      + availability_zone_distribution (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + launch_template {
+          + id      = (known after apply)
+          + name    = (known after apply)
+          + version = (known after apply)
+        }
+
+      + mixed_instances_policy (known after apply)
+
+      + tag {
+          + key                 = "Name"
+          + propagate_at_launch = true
+          + value               = "application-asg"
+        }
+
+      + timeouts {}
+
+      + traffic_source (known after apply)
+    }
+
+  # module.autoscaling.aws_launch_template.this[0] will be created
+  + resource "aws_launch_template" "this" {
+      + arn             = (known after apply)
+      + default_version = (known after apply)
+      + id              = (known after apply)
+      + image_id        = "ami-0c55b159cbfafe1f0"
+      + instance_type   = "t3.micro"
+      + latest_version  = (known after apply)
+      + name            = (known after apply)
+      + name_prefix     = "application-lt-"
+      + tags_all        = (known after apply)
+      + user_data       = "IyEvYmluL2Jhc2gKc3VkbyBhcHQgdXBkYXRlIC15CnN1ZG8gYXB0IGluc3RhbGwgLXkgYXBhY2hlMgpzdWRvIHN5c3RlbWN0bCBzdGFydCBhcGFjaGUyCnN1ZG8gc3lzdGVtY3RsIGVuYWJsZSBhcGFjaGUyCmVjaG8gIjxoMT5IZWxsbyBDb2FsZmlyZSE8L2gxPiIgfCBzdWRvIHRlZSAvdmFyL3d3dy9odG1sL2luZGV4Lmh0bWwKZWNobyAic2NyaXB0IGZpbmlzaGVkIgoKCg=="
+
+      + metadata_options (known after apply)
+
+      + monitoring {
+          + enabled = true
+        }
+
+      + network_interfaces {
+          + device_index    = 0
+          + security_groups = (known after apply)
+        }
+    }
+
+  # module.management_sg.aws_security_group.this will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Allows SSH from a specific IP"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "management-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.management_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "REDACTED/32"
+      + description            = "Allow SSH"
+      + from_port              = 22
+      + id                     = (known after apply)
+      + ip_protocol            = "tcp"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 22
+    }
+
+  # module.vpc.aws_cloudwatch_log_group.this[0] will be created
+  + resource "aws_cloudwatch_log_group" "this" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = (known after apply)
+      + name_prefix       = (known after apply)
+      + retention_in_days = 365
+      + skip_destroy      = false
+      + tags_all          = (known after apply)
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_default_security_group.default will be created
+  + resource "aws_default_security_group" "default" {
+      + arn                    = (known after apply)
+      + description            = (known after apply)
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.vpc.aws_eip.nat[0] will be created
+  + resource "aws_eip" "nat" {
+      + allocation_id        = (known after apply)
+      + arn                  = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = "vpc"
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + ipam_pool_id         = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + ptr_record           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags                 = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+      + tags_all             = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+      + vpc                  = (known after apply)
+    }
+
+  # module.vpc.aws_eip.nat[1] will be created
+  + resource "aws_eip" "nat" {
+      + allocation_id        = (known after apply)
+      + arn                  = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = "vpc"
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + ipam_pool_id         = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + ptr_record           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags                 = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+      + tags_all             = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+      + vpc                  = (known after apply)
+    }
+
+  # module.vpc.aws_flow_log.this[0] will be created
+  + resource "aws_flow_log" "this" {
+      + arn                      = (known after apply)
+      + iam_role_arn             = (known after apply)
+      + id                       = (known after apply)
+      + log_destination          = (known after apply)
+      + log_destination_type     = "cloud-watch-logs"
+      + log_format               = (known after apply)
+      + log_group_name           = (known after apply)
+      + max_aggregation_interval = 600
+      + tags_all                 = (known after apply)
+      + traffic_type             = "ALL"
+      + vpc_id                   = (known after apply)
+    }
+
+  # module.vpc.aws_iam_policy.flowlogs_policy[0] will be created
+  + resource "aws_iam_policy" "flowlogs_policy" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Policy to allow vpc flow logs to forward logs to Cloudwatch"
+      + id               = (known after apply)
+      + name             = "my-project-vpc-flowlogs-cloudwatch-policy"
+      + name_prefix      = (known after apply)
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "logs:PutLogEvents",
+                          + "logs:DescribeLogStreams",
+                          + "logs:DescribeLogGroups",
+                          + "logs:CreateLogStream",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                      + Sid      = "AWSVPCFlowLogsPushToCloudWatch"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.vpc.aws_iam_role.flowlogs_role[0] will be created
+  + resource "aws_iam_role" "flowlogs_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "vpc-flow-logs.amazonaws.com"
+                        }
+                      + Sid       = "AWSVPCFlowLogsAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "my-project-vpc-flowlogs-cloudwatch-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.vpc.aws_iam_role_policy_attachment.flowlogs_policy[0] will be created
+  + resource "aws_iam_role_policy_attachment" "flowlogs_policy" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = "my-project-vpc-flowlogs-cloudwatch-role"
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be created
+  + resource "aws_internet_gateway" "this" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + tags     = {
+          + "Name" = "my-project-vpc"
+        }
+      + tags_all = {
+          + "Name" = "my-project-vpc"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # module.vpc.aws_nat_gateway.this[0] will be created
+  + resource "aws_nat_gateway" "this" {
+      + allocation_id                      = (known after apply)
+      + association_id                     = (known after apply)
+      + connectivity_type                  = "public"
+      + id                                 = (known after apply)
+      + network_interface_id               = (known after apply)
+      + private_ip                         = (known after apply)
+      + public_ip                          = (known after apply)
+      + secondary_private_ip_address_count = (known after apply)
+      + secondary_private_ip_addresses     = (known after apply)
+      + subnet_id                          = (known after apply)
+      + tags                               = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+      + tags_all                           = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+    }
+
+  # module.vpc.aws_nat_gateway.this[1] will be created
+  + resource "aws_nat_gateway" "this" {
+      + allocation_id                      = (known after apply)
+      + association_id                     = (known after apply)
+      + connectivity_type                  = "public"
+      + id                                 = (known after apply)
+      + network_interface_id               = (known after apply)
+      + private_ip                         = (known after apply)
+      + public_ip                          = (known after apply)
+      + secondary_private_ip_address_count = (known after apply)
+      + secondary_private_ip_addresses     = (known after apply)
+      + subnet_id                          = (known after apply)
+      + tags                               = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+      + tags_all                           = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+    }
+
+  # module.vpc.aws_route.private_nat_gateway[0] will be created
+  + resource "aws_route" "private_nat_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.private_nat_gateway[1] will be created
+  + resource "aws_route" "private_nat_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[1] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route_table.private[0] will be created
+  + resource "aws_route_table" "private" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-private-us-east-2a-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-private-us-east-2a-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.private[1] will be created
+  + resource "aws_route_table" "private" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-private-us-east-2b-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-private-us-east-2b-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.public[0] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-public-us-east-2a-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-public-us-east-2a-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.public[1] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-public-us-east-2b-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-public-us-east-2b-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.private[0] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.private[1] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[1] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.private[0] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.2.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-app-us-east-2a"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-app-us-east-2a"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.private[1] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.3.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-backend-us-east-2b"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-backend-us-east-2b"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-public-us-east-2a"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-public-us-east-2a"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[1] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.4.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-public-us-east-2b"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-public-us-east-2b"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_vpc.this will be created
+  + resource "aws_vpc" "this" {
+      + arn                                  = (known after apply)
+      + assign_generated_ipv6_cidr_block     = false
+      + cidr_block                           = "10.1.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = false
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "Name" = "my-project-vpc"
+        }
+      + tags_all                             = {
+          + "Name" = "my-project-vpc"
+        }
+    }
+
+Plan: 44 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + application_load_balancer_dns_name = (known after apply)
+  + management_ec2_public_ip           = (known after apply)
+
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+[11:58:44]:[~/coalfire4]% terraform apply
+module.vpc.data.aws_iam_policy_document.vpc_flow_log_cloudwatch[0]: Reading...
+module.vpc.data.aws_region.current: Reading...
+module.vpc.data.aws_iam_policy_document.flow_log_cloudwatch_assume_role[0]: Reading...
+module.autoscaling.data.aws_partition.current: Reading...
+module.vpc.module.vpc_endpoints.data.aws_region.current: Reading...
+module.vpc.data.aws_region.current: Read complete after 0s [id=us-east-2]
+module.vpc.data.aws_iam_policy_document.flow_log_cloudwatch_assume_role[0]: Read complete after 0s [id=1021377347]
+module.vpc.data.aws_iam_policy_document.vpc_flow_log_cloudwatch[0]: Read complete after 0s [id=2053943846]
+module.autoscaling.data.aws_partition.current: Read complete after 0s [id=aws]
+module.vpc.module.vpc_endpoints.data.aws_region.current: Read complete after 0s [id=us-east-2]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+ <= read (data resources)
+
+Terraform will perform the following actions:
+
+  # data.aws_instance.management will be read during apply
+  # (config refers to values not yet known)
+ <= data "aws_instance" "management" {
+      + ami                         = (known after apply)
+      + arn                         = (known after apply)
+      + associate_public_ip_address = (known after apply)
+      + availability_zone           = (known after apply)
+      + credit_specification        = (known after apply)
+      + disable_api_stop            = (known after apply)
+      + disable_api_termination     = (known after apply)
+      + ebs_block_device            = (known after apply)
+      + ebs_optimized               = (known after apply)
+      + enclave_options             = (known after apply)
+      + ephemeral_block_device      = (known after apply)
+      + host_id                     = (known after apply)
+      + host_resource_group_arn     = (known after apply)
+      + iam_instance_profile        = (known after apply)
+      + id                          = (known after apply)
+      + instance_id                 = (known after apply)
+      + instance_state              = (known after apply)
+      + instance_tags               = (known after apply)
+      + instance_type               = (known after apply)
+      + ipv6_addresses              = (known after apply)
+      + key_name                    = (known after apply)
+      + launch_time                 = (known after apply)
+      + maintenance_options         = (known after apply)
+      + metadata_options            = (known after apply)
+      + monitoring                  = (known after apply)
+      + network_interface_id        = (known after apply)
+      + outpost_arn                 = (known after apply)
+      + password_data               = (known after apply)
+      + placement_group             = (known after apply)
+      + placement_partition_number  = (known after apply)
+      + private_dns                 = (known after apply)
+      + private_dns_name_options    = (known after apply)
+      + private_ip                  = (known after apply)
+      + public_dns                  = (known after apply)
+      + public_ip                   = (known after apply)
+      + root_block_device           = (known after apply)
+      + secondary_private_ips       = (known after apply)
+      + security_groups             = (known after apply)
+      + source_dest_check           = (known after apply)
+      + subnet_id                   = (known after apply)
+      + tags                        = (known after apply)
+      + tenancy                     = (known after apply)
+      + user_data                   = (known after apply)
+      + user_data_base64            = (known after apply)
+      + vpc_security_group_ids      = (known after apply)
+    }
+
+  # aws_instance.management_host will be created
+  + resource "aws_instance" "management_host" {
+      + ami                                  = "ami-0c55b159cbfafe1f0"
+      + arn                                  = (known after apply)
+      + associate_public_ip_address          = true
+      + availability_zone                    = (known after apply)
+      + cpu_core_count                       = (known after apply)
+      + cpu_threads_per_core                 = (known after apply)
+      + disable_api_stop                     = (known after apply)
+      + disable_api_termination              = (known after apply)
+      + ebs_optimized                        = (known after apply)
+      + enable_primary_ipv6                  = (known after apply)
+      + get_password_data                    = false
+      + host_id                              = (known after apply)
+      + host_resource_group_arn              = (known after apply)
+      + iam_instance_profile                 = (known after apply)
+      + id                                   = (known after apply)
+      + instance_initiated_shutdown_behavior = (known after apply)
+      + instance_lifecycle                   = (known after apply)
+      + instance_state                       = (known after apply)
+      + instance_type                        = "t3.micro"
+      + ipv6_address_count                   = (known after apply)
+      + ipv6_addresses                       = (known after apply)
+      + key_name                             = "cf"
+      + monitoring                           = (known after apply)
+      + outpost_arn                          = (known after apply)
+      + password_data                        = (known after apply)
+      + placement_group                      = (known after apply)
+      + placement_partition_number           = (known after apply)
+      + primary_network_interface_id         = (known after apply)
+      + private_dns                          = (known after apply)
+      + private_ip                           = (known after apply)
+      + public_dns                           = (known after apply)
+      + public_ip                            = (known after apply)
+      + secondary_private_ips                = (known after apply)
+      + security_groups                      = (known after apply)
+      + source_dest_check                    = true
+      + spot_instance_request_id             = (known after apply)
+      + subnet_id                            = (known after apply)
+      + tags                                 = {
+          + "Name"       = "management-host"
+          + "managed_by" = "terraform"
+          + "purpose"    = "management"
+        }
+      + tags_all                             = {
+          + "Name"       = "management-host"
+          + "managed_by" = "terraform"
+          + "purpose"    = "management"
+        }
+      + tenancy                              = (known after apply)
+      + user_data                            = (known after apply)
+      + user_data_base64                     = (known after apply)
+      + user_data_replace_on_change          = false
+      + vpc_security_group_ids               = (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + cpu_options (known after apply)
+
+      + ebs_block_device (known after apply)
+
+      + enclave_options (known after apply)
+
+      + ephemeral_block_device (known after apply)
+
+      + instance_market_options (known after apply)
+
+      + maintenance_options (known after apply)
+
+      + metadata_options (known after apply)
+
+      + network_interface (known after apply)
+
+      + private_dns_name_options (known after apply)
+
+      + root_block_device (known after apply)
+    }
+
+  # module.alb.aws_lb.this[0] will be created
+  + resource "aws_lb" "this" {
+      + arn                                                          = (known after apply)
+      + arn_suffix                                                   = (known after apply)
+      + client_keep_alive                                            = 3600
+      + desync_mitigation_mode                                       = "defensive"
+      + dns_name                                                     = (known after apply)
+      + drop_invalid_header_fields                                   = false
+      + enable_deletion_protection                                   = false
+      + enable_http2                                                 = true
+      + enable_tls_version_and_cipher_suite_headers                  = false
+      + enable_waf_fail_open                                         = false
+      + enable_xff_client_port                                       = true
+      + enable_zonal_shift                                           = false
+      + enforce_security_group_inbound_rules_on_private_link_traffic = (known after apply)
+      + id                                                           = (known after apply)
+      + idle_timeout                                                 = 60
+      + internal                                                     = false
+      + ip_address_type                                              = "ipv4"
+      + load_balancer_type                                           = "application"
+      + name                                                         = "application-alb"
+      + name_prefix                                                  = (known after apply)
+      + preserve_host_header                                         = false
+      + security_groups                                              = (known after apply)
+      + subnets                                                      = (known after apply)
+      + tags                                                         = {
+          + "Name" = "application-alb"
+        }
+      + tags_all                                                     = {
+          + "Name" = "application-alb"
+        }
+      + vpc_id                                                       = (known after apply)
+      + xff_header_processing_mode                                   = "append"
+      + zone_id                                                      = (known after apply)
+
+      + subnet_mapping (known after apply)
+
+      + timeouts {
+          + create = "10m"
+          + delete = "10m"
+          + update = "10m"
+        }
+    }
+
+  # module.alb.aws_lb_listener.frontend_http_tcp[0] will be created
+  + resource "aws_lb_listener" "frontend_http_tcp" {
+      + arn                                                                   = (known after apply)
+      + id                                                                    = (known after apply)
+      + load_balancer_arn                                                     = (known after apply)
+      + port                                                                  = 80
+      + protocol                                                              = "HTTP"
+      + routing_http_request_x_amzn_mtls_clientcert_header_name               = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_issuer_header_name        = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_leaf_header_name          = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_serial_number_header_name = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_subject_header_name       = (known after apply)
+      + routing_http_request_x_amzn_mtls_clientcert_validity_header_name      = (known after apply)
+      + routing_http_request_x_amzn_tls_cipher_suite_header_name              = (known after apply)
+      + routing_http_request_x_amzn_tls_version_header_name                   = (known after apply)
+      + routing_http_response_access_control_allow_credentials_header_value   = (known after apply)
+      + routing_http_response_access_control_allow_headers_header_value       = (known after apply)
+      + routing_http_response_access_control_allow_methods_header_value       = (known after apply)
+      + routing_http_response_access_control_allow_origin_header_value        = (known after apply)
+      + routing_http_response_access_control_expose_headers_header_value      = (known after apply)
+      + routing_http_response_access_control_max_age_header_value             = (known after apply)
+      + routing_http_response_content_security_policy_header_value            = (known after apply)
+      + routing_http_response_server_enabled                                  = (known after apply)
+      + routing_http_response_strict_transport_security_header_value          = (known after apply)
+      + routing_http_response_x_content_type_options_header_value             = (known after apply)
+      + routing_http_response_x_frame_options_header_value                    = (known after apply)
+      + ssl_policy                                                            = (known after apply)
+      + tags_all                                                              = (known after apply)
+      + tcp_idle_timeout_seconds                                              = (known after apply)
+
+      + default_action {
+          + order            = (known after apply)
+          + target_group_arn = (known after apply)
+          + type             = "forward"
+        }
+
+      + mutual_authentication (known after apply)
+    }
+
+  # module.alb.aws_lb_target_group.main[0] will be created
+  + resource "aws_lb_target_group" "main" {
+      + arn                                = (known after apply)
+      + arn_suffix                         = (known after apply)
+      + connection_termination             = (known after apply)
+      + deregistration_delay               = "300"
+      + id                                 = (known after apply)
+      + ip_address_type                    = (known after apply)
+      + lambda_multi_value_headers_enabled = false
+      + load_balancer_arns                 = (known after apply)
+      + load_balancing_algorithm_type      = (known after apply)
+      + load_balancing_anomaly_mitigation  = (known after apply)
+      + load_balancing_cross_zone_enabled  = (known after apply)
+      + name                               = (known after apply)
+      + name_prefix                        = "apptg-"
+      + port                               = 80
+      + preserve_client_ip                 = (known after apply)
+      + protocol                           = "HTTP"
+      + protocol_version                   = (known after apply)
+      + proxy_protocol_v2                  = false
+      + slow_start                         = 0
+      + tags                               = {
+          + "Name" = "apptg-"
+        }
+      + tags_all                           = {
+          + "Name" = "apptg-"
+        }
+      + target_type                        = "instance"
+      + vpc_id                             = (known after apply)
+
+      + health_check {
+          + enabled             = true
+          + healthy_threshold   = 3
+          + interval            = 30
+          + matcher             = (known after apply)
+          + path                = "/"
+          + port                = "traffic-port"
+          + protocol            = "HTTP"
+          + timeout             = (known after apply)
+          + unhealthy_threshold = 3
+        }
+
+      + stickiness (known after apply)
+
+      + target_failover (known after apply)
+
+      + target_group_health (known after apply)
+
+      + target_health_state (known after apply)
+    }
+
+  # module.alb.aws_security_group.this[0] will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Managed by Terraform"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = "application-alb-"
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags                   = {
+          + "Name" = "application-alb"
+        }
+      + tags_all               = {
+          + "Name" = "application-alb"
+        }
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.alb_sg.aws_security_group.this will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Allows HTTP from the internet"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "alb-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.alb_sg.aws_vpc_security_group_egress_rule.this["allows all egress"] will be created
+  + resource "aws_vpc_security_group_egress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "Allow all outbound traffic"
+      + from_port              = 0
+      + id                     = (known after apply)
+      + ip_protocol            = "-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 0
+    }
+
+  # module.alb_sg.aws_vpc_security_group_ingress_rule.this["allows http"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "Allow HTTP from internet"
+      + from_port              = 80
+      + id                     = (known after apply)
+      + ip_protocol            = "tcp"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 80
+    }
+
+  # module.application_sg.aws_security_group.this will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Allows SSH from management and web traffic from ALB"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "application-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.application_sg.aws_vpc_security_group_egress_rule.this["allows all egress"] will be created
+  + resource "aws_vpc_security_group_egress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "0.0.0.0/0"
+      + description            = "Allow all outbound traffic"
+      + from_port              = 0
+      + id                     = (known after apply)
+      + ip_protocol            = "-1"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 0
+    }
+
+  # module.application_sg.aws_vpc_security_group_ingress_rule.this["allows http"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                          = (known after apply)
+      + description                  = "Allow web traffic from ALB"
+      + from_port                    = 80
+      + id                           = (known after apply)
+      + ip_protocol                  = "tcp"
+      + referenced_security_group_id = (known after apply)
+      + security_group_id            = (known after apply)
+      + security_group_rule_id       = (known after apply)
+      + tags_all                     = {}
+      + to_port                      = 80
+    }
+
+  # module.application_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                          = (known after apply)
+      + description                  = "Allow SSH from management"
+      + from_port                    = 22
+      + id                           = (known after apply)
+      + ip_protocol                  = "tcp"
+      + referenced_security_group_id = (known after apply)
+      + security_group_id            = (known after apply)
+      + security_group_rule_id       = (known after apply)
+      + tags_all                     = {}
+      + to_port                      = 22
+    }
+
+  # module.autoscaling.aws_autoscaling_group.this[0] will be created
+  + resource "aws_autoscaling_group" "this" {
+      + arn                              = (known after apply)
+      + availability_zones               = (known after apply)
+      + default_cooldown                 = (known after apply)
+      + desired_capacity                 = 2
+      + force_delete                     = false
+      + force_delete_warm_pool           = false
+      + health_check_grace_period        = 300
+      + health_check_type                = (known after apply)
+      + id                               = (known after apply)
+      + ignore_failed_scaling_activities = false
+      + load_balancers                   = (known after apply)
+      + max_size                         = 6
+      + metrics_granularity              = "1Minute"
+      + min_size                         = 2
+      + name                             = (known after apply)
+      + name_prefix                      = "application-asg-"
+      + predicted_capacity               = (known after apply)
+      + protect_from_scale_in            = false
+      + service_linked_role_arn          = (known after apply)
+      + target_group_arns                = (known after apply)
+      + termination_policies             = []
+      + vpc_zone_identifier              = (known after apply)
+      + wait_for_capacity_timeout        = "10m"
+      + warm_pool_size                   = (known after apply)
+
+      + availability_zone_distribution (known after apply)
+
+      + capacity_reservation_specification (known after apply)
+
+      + launch_template {
+          + id      = (known after apply)
+          + name    = (known after apply)
+          + version = (known after apply)
+        }
+
+      + mixed_instances_policy (known after apply)
+
+      + tag {
+          + key                 = "Name"
+          + propagate_at_launch = true
+          + value               = "application-asg"
+        }
+
+      + timeouts {}
+
+      + traffic_source (known after apply)
+    }
+
+  # module.autoscaling.aws_launch_template.this[0] will be created
+  + resource "aws_launch_template" "this" {
+      + arn             = (known after apply)
+      + default_version = (known after apply)
+      + id              = (known after apply)
+      + image_id        = "ami-0c55b159cbfafe1f0"
+      + instance_type   = "t3.micro"
+      + latest_version  = (known after apply)
+      + name            = (known after apply)
+      + name_prefix     = "application-lt-"
+      + tags_all        = (known after apply)
+      + user_data       = "IyEvYmluL2Jhc2gKc3VkbyBhcHQgdXBkYXRlIC15CnN1ZG8gYXB0IGluc3RhbGwgLXkgYXBhY2hlMgpzdWRvIHN5c3RlbWN0bCBzdGFydCBhcGFjaGUyCnN1ZG8gc3lzdGVtY3RsIGVuYWJsZSBhcGFjaGUyCmVjaG8gIjxoMT5IZWxsbyBDb2FsZmlyZSE8L2gxPiIgfCBzdWRvIHRlZSAvdmFyL3d3dy9odG1sL2luZGV4Lmh0bWwKZWNobyAic2NyaXB0IGZpbmlzaGVkIgoKCg=="
+
+      + metadata_options (known after apply)
+
+      + monitoring {
+          + enabled = true
+        }
+
+      + network_interfaces {
+          + device_index    = 0
+          + security_groups = (known after apply)
+        }
+    }
+
+  # module.management_sg.aws_security_group.this will be created
+  + resource "aws_security_group" "this" {
+      + arn                    = (known after apply)
+      + description            = "Allows SSH from a specific IP"
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = "management-sg"
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.management_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"] will be created
+  + resource "aws_vpc_security_group_ingress_rule" "this" {
+      + arn                    = (known after apply)
+      + cidr_ipv4              = "REDACTED/32"
+      + description            = "Allow SSH"
+      + from_port              = 22
+      + id                     = (known after apply)
+      + ip_protocol            = "tcp"
+      + security_group_id      = (known after apply)
+      + security_group_rule_id = (known after apply)
+      + tags_all               = {}
+      + to_port                = 22
+    }
+
+  # module.vpc.aws_cloudwatch_log_group.this[0] will be created
+  + resource "aws_cloudwatch_log_group" "this" {
+      + arn               = (known after apply)
+      + id                = (known after apply)
+      + log_group_class   = (known after apply)
+      + name              = (known after apply)
+      + name_prefix       = (known after apply)
+      + retention_in_days = 365
+      + skip_destroy      = false
+      + tags_all          = (known after apply)
+        # (1 unchanged attribute hidden)
+    }
+
+  # module.vpc.aws_default_security_group.default will be created
+  + resource "aws_default_security_group" "default" {
+      + arn                    = (known after apply)
+      + description            = (known after apply)
+      + egress                 = (known after apply)
+      + id                     = (known after apply)
+      + ingress                = (known after apply)
+      + name                   = (known after apply)
+      + name_prefix            = (known after apply)
+      + owner_id               = (known after apply)
+      + revoke_rules_on_delete = false
+      + tags_all               = (known after apply)
+      + vpc_id                 = (known after apply)
+    }
+
+  # module.vpc.aws_eip.nat[0] will be created
+  + resource "aws_eip" "nat" {
+      + allocation_id        = (known after apply)
+      + arn                  = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = "vpc"
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + ipam_pool_id         = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + ptr_record           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags                 = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+      + tags_all             = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+      + vpc                  = (known after apply)
+    }
+
+  # module.vpc.aws_eip.nat[1] will be created
+  + resource "aws_eip" "nat" {
+      + allocation_id        = (known after apply)
+      + arn                  = (known after apply)
+      + association_id       = (known after apply)
+      + carrier_ip           = (known after apply)
+      + customer_owned_ip    = (known after apply)
+      + domain               = "vpc"
+      + id                   = (known after apply)
+      + instance             = (known after apply)
+      + ipam_pool_id         = (known after apply)
+      + network_border_group = (known after apply)
+      + network_interface    = (known after apply)
+      + private_dns          = (known after apply)
+      + private_ip           = (known after apply)
+      + ptr_record           = (known after apply)
+      + public_dns           = (known after apply)
+      + public_ip            = (known after apply)
+      + public_ipv4_pool     = (known after apply)
+      + tags                 = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+      + tags_all             = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+      + vpc                  = (known after apply)
+    }
+
+  # module.vpc.aws_flow_log.this[0] will be created
+  + resource "aws_flow_log" "this" {
+      + arn                      = (known after apply)
+      + iam_role_arn             = (known after apply)
+      + id                       = (known after apply)
+      + log_destination          = (known after apply)
+      + log_destination_type     = "cloud-watch-logs"
+      + log_format               = (known after apply)
+      + log_group_name           = (known after apply)
+      + max_aggregation_interval = 600
+      + tags_all                 = (known after apply)
+      + traffic_type             = "ALL"
+      + vpc_id                   = (known after apply)
+    }
+
+  # module.vpc.aws_iam_policy.flowlogs_policy[0] will be created
+  + resource "aws_iam_policy" "flowlogs_policy" {
+      + arn              = (known after apply)
+      + attachment_count = (known after apply)
+      + description      = "Policy to allow vpc flow logs to forward logs to Cloudwatch"
+      + id               = (known after apply)
+      + name             = "my-project-vpc-flowlogs-cloudwatch-policy"
+      + name_prefix      = (known after apply)
+      + path             = "/"
+      + policy           = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action   = [
+                          + "logs:PutLogEvents",
+                          + "logs:DescribeLogStreams",
+                          + "logs:DescribeLogGroups",
+                          + "logs:CreateLogStream",
+                        ]
+                      + Effect   = "Allow"
+                      + Resource = "*"
+                      + Sid      = "AWSVPCFlowLogsPushToCloudWatch"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + policy_id        = (known after apply)
+      + tags_all         = (known after apply)
+    }
+
+  # module.vpc.aws_iam_role.flowlogs_role[0] will be created
+  + resource "aws_iam_role" "flowlogs_role" {
+      + arn                   = (known after apply)
+      + assume_role_policy    = jsonencode(
+            {
+              + Statement = [
+                  + {
+                      + Action    = "sts:AssumeRole"
+                      + Effect    = "Allow"
+                      + Principal = {
+                          + Service = "vpc-flow-logs.amazonaws.com"
+                        }
+                      + Sid       = "AWSVPCFlowLogsAssumeRole"
+                    },
+                ]
+              + Version   = "2012-10-17"
+            }
+        )
+      + create_date           = (known after apply)
+      + force_detach_policies = false
+      + id                    = (known after apply)
+      + managed_policy_arns   = (known after apply)
+      + max_session_duration  = 3600
+      + name                  = "my-project-vpc-flowlogs-cloudwatch-role"
+      + name_prefix           = (known after apply)
+      + path                  = "/"
+      + tags_all              = (known after apply)
+      + unique_id             = (known after apply)
+
+      + inline_policy (known after apply)
+    }
+
+  # module.vpc.aws_iam_role_policy_attachment.flowlogs_policy[0] will be created
+  + resource "aws_iam_role_policy_attachment" "flowlogs_policy" {
+      + id         = (known after apply)
+      + policy_arn = (known after apply)
+      + role       = "my-project-vpc-flowlogs-cloudwatch-role"
+    }
+
+  # module.vpc.aws_internet_gateway.this[0] will be created
+  + resource "aws_internet_gateway" "this" {
+      + arn      = (known after apply)
+      + id       = (known after apply)
+      + owner_id = (known after apply)
+      + tags     = {
+          + "Name" = "my-project-vpc"
+        }
+      + tags_all = {
+          + "Name" = "my-project-vpc"
+        }
+      + vpc_id   = (known after apply)
+    }
+
+  # module.vpc.aws_nat_gateway.this[0] will be created
+  + resource "aws_nat_gateway" "this" {
+      + allocation_id                      = (known after apply)
+      + association_id                     = (known after apply)
+      + connectivity_type                  = "public"
+      + id                                 = (known after apply)
+      + network_interface_id               = (known after apply)
+      + private_ip                         = (known after apply)
+      + public_ip                          = (known after apply)
+      + secondary_private_ip_address_count = (known after apply)
+      + secondary_private_ip_addresses     = (known after apply)
+      + subnet_id                          = (known after apply)
+      + tags                               = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+      + tags_all                           = {
+          + "Name" = "my-project-vpc-us-east-2a"
+        }
+    }
+
+  # module.vpc.aws_nat_gateway.this[1] will be created
+  + resource "aws_nat_gateway" "this" {
+      + allocation_id                      = (known after apply)
+      + association_id                     = (known after apply)
+      + connectivity_type                  = "public"
+      + id                                 = (known after apply)
+      + network_interface_id               = (known after apply)
+      + private_ip                         = (known after apply)
+      + public_ip                          = (known after apply)
+      + secondary_private_ip_address_count = (known after apply)
+      + secondary_private_ip_addresses     = (known after apply)
+      + subnet_id                          = (known after apply)
+      + tags                               = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+      + tags_all                           = {
+          + "Name" = "my-project-vpc-us-east-2b"
+        }
+    }
+
+  # module.vpc.aws_route.private_nat_gateway[0] will be created
+  + resource "aws_route" "private_nat_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.private_nat_gateway[1] will be created
+  + resource "aws_route" "private_nat_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + nat_gateway_id         = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[0] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route.public_internet_gateway[1] will be created
+  + resource "aws_route" "public_internet_gateway" {
+      + destination_cidr_block = "0.0.0.0/0"
+      + gateway_id             = (known after apply)
+      + id                     = (known after apply)
+      + instance_id            = (known after apply)
+      + instance_owner_id      = (known after apply)
+      + network_interface_id   = (known after apply)
+      + origin                 = (known after apply)
+      + route_table_id         = (known after apply)
+      + state                  = (known after apply)
+
+      + timeouts {
+          + create = "5m"
+        }
+    }
+
+  # module.vpc.aws_route_table.private[0] will be created
+  + resource "aws_route_table" "private" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-private-us-east-2a-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-private-us-east-2a-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.private[1] will be created
+  + resource "aws_route_table" "private" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-private-us-east-2b-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-private-us-east-2b-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.public[0] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-public-us-east-2a-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-public-us-east-2a-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table.public[1] will be created
+  + resource "aws_route_table" "public" {
+      + arn              = (known after apply)
+      + id               = (known after apply)
+      + owner_id         = (known after apply)
+      + propagating_vgws = (known after apply)
+      + route            = (known after apply)
+      + tags             = {
+          + "Name" = "my-project-vpc-public-us-east-2b-rtb"
+        }
+      + tags_all         = {
+          + "Name" = "my-project-vpc-public-us-east-2b-rtb"
+        }
+      + vpc_id           = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.private[0] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.private[1] will be created
+  + resource "aws_route_table_association" "private" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[0] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_route_table_association.public[1] will be created
+  + resource "aws_route_table_association" "public" {
+      + id             = (known after apply)
+      + route_table_id = (known after apply)
+      + subnet_id      = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.private[0] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.2.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-app-us-east-2a"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-app-us-east-2a"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.private[1] will be created
+  + resource "aws_subnet" "private" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.3.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = false
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-backend-us-east-2b"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-backend-us-east-2b"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[0] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2a"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.1.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-public-us-east-2a"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-public-us-east-2a"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_subnet.public[1] will be created
+  + resource "aws_subnet" "public" {
+      + arn                                            = (known after apply)
+      + assign_ipv6_address_on_creation                = false
+      + availability_zone                              = "us-east-2b"
+      + availability_zone_id                           = (known after apply)
+      + cidr_block                                     = "10.1.4.0/24"
+      + enable_dns64                                   = false
+      + enable_resource_name_dns_a_record_on_launch    = false
+      + enable_resource_name_dns_aaaa_record_on_launch = false
+      + id                                             = (known after apply)
+      + ipv6_cidr_block_association_id                 = (known after apply)
+      + ipv6_native                                    = false
+      + map_public_ip_on_launch                        = true
+      + owner_id                                       = (known after apply)
+      + private_dns_hostname_type_on_launch            = (known after apply)
+      + tags                                           = {
+          + "Name" = "my-project-vpc-public-us-east-2b"
+        }
+      + tags_all                                       = {
+          + "Name" = "my-project-vpc-public-us-east-2b"
+        }
+      + vpc_id                                         = (known after apply)
+    }
+
+  # module.vpc.aws_vpc.this will be created
+  + resource "aws_vpc" "this" {
+      + arn                                  = (known after apply)
+      + assign_generated_ipv6_cidr_block     = false
+      + cidr_block                           = "10.1.0.0/16"
+      + default_network_acl_id               = (known after apply)
+      + default_route_table_id               = (known after apply)
+      + default_security_group_id            = (known after apply)
+      + dhcp_options_id                      = (known after apply)
+      + enable_dns_hostnames                 = false
+      + enable_dns_support                   = true
+      + enable_network_address_usage_metrics = (known after apply)
+      + id                                   = (known after apply)
+      + instance_tenancy                     = "default"
+      + ipv6_association_id                  = (known after apply)
+      + ipv6_cidr_block                      = (known after apply)
+      + ipv6_cidr_block_network_border_group = (known after apply)
+      + main_route_table_id                  = (known after apply)
+      + owner_id                             = (known after apply)
+      + tags                                 = {
+          + "Name" = "my-project-vpc"
+        }
+      + tags_all                             = {
+          + "Name" = "my-project-vpc"
+        }
+    }
+
+Plan: 44 to add, 0 to change, 0 to destroy.
+
+Changes to Outputs:
+  + application_load_balancer_dns_name = (known after apply)
+  + management_ec2_public_ip           = (known after apply)
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+module.vpc.aws_iam_policy.flowlogs_policy[0]: Creating...
+module.vpc.aws_eip.nat[1]: Creating...
+module.vpc.aws_iam_role.flowlogs_role[0]: Creating...
+module.vpc.aws_eip.nat[0]: Creating...
+module.vpc.aws_vpc.this: Creating...
+module.vpc.aws_iam_policy.flowlogs_policy[0]: Creation complete after 1s [id=arn:aws:iam::546578040150:policy/my-project-vpc-flowlogs-cloudwatch-policy]
+module.vpc.aws_iam_role.flowlogs_role[0]: Creation complete after 1s [id=my-project-vpc-flowlogs-cloudwatch-role]
+module.vpc.aws_iam_role_policy_attachment.flowlogs_policy[0]: Creating...
+module.vpc.aws_iam_role_policy_attachment.flowlogs_policy[0]: Creation complete after 0s [id=my-project-vpc-flowlogs-cloudwatch-role-20250811165855697900000001]
+module.vpc.aws_eip.nat[0]: Creation complete after 1s [id=eipalloc-0d97a57e84f65732d]
+module.vpc.aws_eip.nat[1]: Creation complete after 1s [id=eipalloc-0f4ec136e95883dac]
+module.vpc.aws_vpc.this: Creation complete after 2s [id=vpc-06858fb728cad53fb]
+module.vpc.aws_default_security_group.default: Creating...
+module.management_sg.aws_security_group.this: Creating...
+module.vpc.aws_cloudwatch_log_group.this[0]: Creating...
+module.vpc.aws_route_table.public[1]: Creating...
+module.vpc.aws_route_table.private[0]: Creating...
+module.application_sg.aws_security_group.this: Creating...
+module.vpc.aws_route_table.private[1]: Creating...
+module.vpc.aws_subnet.private[0]: Creating...
+module.alb.aws_security_group.this[0]: Creating...
+module.vpc.aws_subnet.private[1]: Creating...
+module.vpc.aws_cloudwatch_log_group.this[0]: Creation complete after 0s [id=/aws/vpcflow/vpc-06858fb728cad53fb]
+module.vpc.aws_internet_gateway.this[0]: Creating...
+module.vpc.aws_route_table.public[1]: Creation complete after 0s [id=rtb-0832c2be5aef5537f]
+module.vpc.aws_route_table.public[0]: Creating...
+module.vpc.aws_route_table.private[0]: Creation complete after 0s [id=rtb-044d813b600bf2500]
+module.alb_sg.aws_security_group.this: Creating...
+module.vpc.aws_route_table.private[1]: Creation complete after 0s [id=rtb-04f89c908610081e4]
+module.vpc.aws_subnet.public[0]: Creating...
+module.vpc.aws_internet_gateway.this[0]: Creation complete after 0s [id=igw-05dfa4da45bc6ec64]
+module.vpc.aws_subnet.public[1]: Creating...
+module.vpc.aws_subnet.private[1]: Creation complete after 0s [id=subnet-0a99ade43d7d12cf3]
+module.alb.aws_lb_target_group.main[0]: Creating...
+module.vpc.aws_route_table.public[0]: Creation complete after 1s [id=rtb-0038ecbf4f7ae24a2]
+module.vpc.aws_route.public_internet_gateway[1]: Creating...
+module.vpc.aws_default_security_group.default: Creation complete after 1s [id=sg-0bbf915381a807e57]
+module.vpc.aws_route.public_internet_gateway[0]: Creating...
+module.alb.aws_lb_target_group.main[0]: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-2:546578040150:targetgroup/apptg-20250811165857412900000007/5f23510cf239d4fa]
+module.vpc.aws_flow_log.this[0]: Creating...
+module.vpc.aws_route.public_internet_gateway[1]: Creation complete after 0s [id=r-rtb-0832c2be5aef5537f1080289494]
+module.application_sg.aws_security_group.this: Creation complete after 2s [id=sg-05af2104cb0426f69]
+module.alb.aws_security_group.this[0]: Creation complete after 2s [id=sg-0356413e5114f3d3e]
+module.application_sg.aws_vpc_security_group_egress_rule.this["allows all egress"]: Creating...
+module.autoscaling.aws_launch_template.this[0]: Creating...
+module.vpc.aws_flow_log.this[0]: Creation complete after 1s [id=fl-03736d1ba3e7c855d]
+module.management_sg.aws_security_group.this: Creation complete after 2s [id=sg-041a9423bed6ab7b2]
+module.management_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"]: Creating...
+module.vpc.aws_route.public_internet_gateway[0]: Creation complete after 1s [id=r-rtb-0038ecbf4f7ae24a21080289494]
+module.alb_sg.aws_security_group.this: Creation complete after 2s [id=sg-0b129ba6684e8662e]
+module.alb_sg.aws_vpc_security_group_ingress_rule.this["allows http"]: Creating...
+module.alb_sg.aws_vpc_security_group_egress_rule.this["allows all egress"]: Creating...
+module.application_sg.aws_vpc_security_group_ingress_rule.this["allows http"]: Creating...
+module.application_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"]: Creating...
+module.application_sg.aws_vpc_security_group_egress_rule.this["allows all egress"]: Creation complete after 0s [id=sgr-09e7e8e999e71a4e2]
+module.management_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"]: Creation complete after 0s [id=sgr-03c9a051d981855a2]
+module.alb_sg.aws_vpc_security_group_egress_rule.this["allows all egress"]: Creation complete after 0s [id=sgr-0a19e9bd1067fe500]
+module.application_sg.aws_vpc_security_group_ingress_rule.this["allows ssh"]: Creation complete after 0s [id=sgr-0598accf36f8fa0a5]
+module.alb_sg.aws_vpc_security_group_ingress_rule.this["allows http"]: Creation complete after 0s [id=sgr-0314181c1ff47e821]
+module.application_sg.aws_vpc_security_group_ingress_rule.this["allows http"]: Creation complete after 0s [id=sgr-057f9b5fd83048f97]
+module.vpc.aws_subnet.private[0]: Creation complete after 4s [id=subnet-02a2d44bfc7ec24ee]
+module.vpc.aws_route_table_association.private[1]: Creating...
+module.vpc.aws_route_table_association.private[0]: Creating...
+module.vpc.aws_route_table_association.private[1]: Creation complete after 0s [id=rtbassoc-0115e5a879ba84a0f]
+module.vpc.aws_route_table_association.private[0]: Creation complete after 0s [id=rtbassoc-03a741644567740a2]
+module.autoscaling.aws_launch_template.this[0]: Creation complete after 5s [id=lt-05fec2b95bdaee338]
+module.autoscaling.aws_autoscaling_group.this[0]: Creating...
+module.vpc.aws_subnet.public[0]: Still creating... [00m10s elapsed]
+module.vpc.aws_subnet.public[1]: Still creating... [00m10s elapsed]
+module.vpc.aws_subnet.public[0]: Creation complete after 11s [id=subnet-09734e543bfaf2227]
+module.vpc.aws_subnet.public[1]: Creation complete after 11s [id=subnet-0ccd0849e4855f358]
+module.vpc.aws_route_table_association.public[1]: Creating...
+module.vpc.aws_route_table_association.public[0]: Creating...
+module.vpc.aws_nat_gateway.this[1]: Creating...
+module.vpc.aws_nat_gateway.this[0]: Creating...
+module.alb.aws_lb.this[0]: Creating...
+aws_instance.management_host: Creating...
+module.vpc.aws_route_table_association.public[0]: Creation complete after 1s [id=rtbassoc-0cce4f28fb4083e46]
+module.vpc.aws_route_table_association.public[1]: Creation complete after 1s [id=rtbassoc-092c5e4316c4badc6]
+module.autoscaling.aws_autoscaling_group.this[0]: Still creating... [00m10s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m10s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m10s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [00m10s elapsed]
+aws_instance.management_host: Still creating... [00m10s elapsed]
+module.autoscaling.aws_autoscaling_group.this[0]: Creation complete after 17s [id=application-asg-2025081116590447510000000b]
+aws_instance.management_host: Creation complete after 14s [id=i-01d282bfcaed1c7a8]
+data.aws_instance.management: Reading...
+data.aws_instance.management: Read complete after 1s [id=i-01d282bfcaed1c7a8]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m20s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m20s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [00m20s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m30s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m30s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [00m30s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m40s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m40s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [00m40s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [00m50s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [00m50s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [00m50s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [01m00s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m00s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [01m00s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m10s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [01m10s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [01m10s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [01m20s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m20s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [01m20s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Still creating... [01m30s elapsed]
+module.vpc.aws_nat_gateway.this[1]: Still creating... [01m30s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [01m30s elapsed]
+module.vpc.aws_nat_gateway.this[0]: Creation complete after 1m35s [id=nat-0b6572631d1611d8d]
+module.vpc.aws_nat_gateway.this[1]: Creation complete after 1m35s [id=nat-09e584f914f8188e0]
+module.vpc.aws_route.private_nat_gateway[1]: Creating...
+module.vpc.aws_route.private_nat_gateway[0]: Creating...
+module.vpc.aws_route.private_nat_gateway[0]: Creation complete after 1s [id=r-rtb-044d813b600bf25001080289494]
+module.vpc.aws_route.private_nat_gateway[1]: Creation complete after 1s [id=r-rtb-04f89c908610081e41080289494]
+module.alb.aws_lb.this[0]: Still creating... [01m40s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [01m50s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [02m00s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [02m10s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [02m20s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [02m30s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [02m40s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [02m50s elapsed]
+module.alb.aws_lb.this[0]: Still creating... [03m00s elapsed]
+module.alb.aws_lb.this[0]: Creation complete after 3m4s [id=arn:aws:elasticloadbalancing:us-east-2:546578040150:loadbalancer/app/application-alb/eac3eac89ad7cda5]
+module.alb.aws_lb_listener.frontend_http_tcp[0]: Creating...
+module.alb.aws_lb_listener.frontend_http_tcp[0]: Creation complete after 1s [id=arn:aws:elasticloadbalancing:us-east-2:546578040150:listener/app/application-alb/eac3eac89ad7cda5/7397de5790881984]
+
+Apply complete! Resources: 44 added, 0 changed, 0 destroyed.
+
+Outputs:
+
+application_load_balancer_dns_name = "application-alb-174560706.us-east-2.elb.amazonaws.com"
+management_ec2_public_ip = "18.117.91.226"
+[12:02:12]:[~/coalfire4]% 
